@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PatchSync - Multi-Agent Code Generation</title>
+    <meta name="description" content="Edit 10 files in parallel. Get it right the first time. PatchSync is the multi-agent code generation system that never breaks your repo.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 50%, #16213e 100%);
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 217, 255, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #00d9ff, #0099cc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tagline {
+            font-size: 1.3em;
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1em;
+            color: #999;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .feature-card {
+            background: rgba(0, 217, 255, 0.05);
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            padding: 30px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(0, 217, 255, 0.5);
+            background: rgba(0, 217, 255, 0.08);
+        }
+
+        .feature-card h3 {
+            color: #00d9ff;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .feature-card p {
+            color: #999;
+            font-size: 0.95em;
+        }
+
+        .problem-section {
+            background: rgba(255, 0, 0, 0.05);
+            border-left: 4px solid rgba(255, 100, 100, 0.5);
+            padding: 30px;
+            margin: 60px 0;
+            border-radius: 4px;
+        }
+
+        .problem-section h2 {
+            color: #ff6464;
+            margin-bottom: 15px;
+        }
+
+        .problem-section p {
+            color: #999;
+        }
+
+        .solution-section {
+            background: rgba(0, 217, 255, 0.05);
+            border-left: 4px solid rgba(0, 217, 255, 0.5);
+            padding: 30px;
+            margin: 60px 0;
+            border-radius: 4px;
+        }
+
+        .solution-section h2 {
+            color: #00d9ff;
+            margin-bottom: 15px;
+        }
+
+        .solution-section p {
+            color: #999;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 80px 0;
+            border-top: 1px solid rgba(0, 217, 255, 0.1);
+        }
+
+        .coming-soon {
+            font-size: 0.95em;
+            color: #666;
+            margin: 20px 0;
+        }
+
+        .email-link {
+            color: #00d9ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .email-link:hover {
+            color: #0099cc;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid rgba(0, 217, 255, 0.1);
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(0, 217, 255, 0.1);
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            color: #00d9ff;
+            margin: 5px;
+        }
+
+        .badges {
+            margin: 30px 0;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .tagline {
+                font-size: 1.1em;
+            }
+
+            .hero-subtitle {
+                font-size: 1em;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PatchSync</h1>
+            <p class="tagline">Multi-agent code generation that never breaks your repo</p>
+        </header>
+
+        <div class="hero">
+            <p class="hero-subtitle">
+                A multi-agent code generation system that handles complex, interdependent codebases without breaking imports or creating conflicts.
+            </p>
+        </div>
+
+        <div class="problem-section">
+            <h2>Why This Matters</h2>
+            <p>
+                Sequential code generation breaks on complex repositories. Edit one file, and imports in five others are left stale. Modify a state machine and forget to update all the handlers. The dependencies multiply faster than sequential tools can handle.
+            </p>
+            <p style="margin-top: 15px;">
+                This forces you back to manual work—the thing you wanted to automate in the first place.
+            </p>
+        </div>
+
+        <div class="solution-section">
+            <h2>How It Works</h2>
+            <p>
+                PatchSync spawns multiple agents in parallel, one per file. They don't work in isolation—each agent knows what the others are doing via a unified work plan. After all agents generate patches, a coordinator detects cross-file issues (renames, imports, shared state changes) and either fixes them automatically or escalates to a director.
+            </p>
+            <p style="margin-top: 15px;">
+                Result: all files edited together, coordinated, with no conflicts.
+            </p>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <h3>Parallel Agents</h3>
+                <p>Edits to 10 files happen simultaneously instead of sequentially. Faster not just by degree, but by architectural design.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Deterministic Coordination</h3>
+                <p>Multi-agent work is merged using an SSOT (single source of truth) constraint system. Conflicts are prevented at generation time, not detected after.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Complex Repo Support</h3>
+                <p>Handles monorepos, circular dependencies, cascading validation logic, and interdependent state—structures that break sequential tools.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Multi-Stage Review</h3>
+                <p>Planner → Coder(s) → Reviewer → Final Reviewer → Director. Each stage has authority. Director makes the final allow/deny decision.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Risk Scoring</h3>
+                <p>Changes are scored by risk: file criticality, change scope, downstream impact. High-risk edits get extra scrutiny; low-risk edits move fast.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Learning & Retries</h3>
+                <p>If patches are rejected, the system learns why and retries with updated constraints. Multi-attempt orchestration with memory built in.</p>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Coming Soon</h2>
+            <p class="coming-soon">PatchSync is in development. We plan to launch a VS Code extension prototype in Q1 of 2026.</p>
+            <p>
+                Want to know more?<br>
+                <a href="mailto:josh@patchsync.dev" class="email-link">Get in touch</a>
+            </p>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 PatchSync. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
